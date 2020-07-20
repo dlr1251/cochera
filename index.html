@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Cochera</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        * {
+            font-family:Arial, Helvetica, sans-serifs;
+            color: #616161
+        }
+        .cochera {
+            background-color: whitesmoke;
+            height: 100%;
+            padding: 2rem;
+        }
+        .title {
+            text-align: center;
+            padding: 1rem;
+            background-color: e0e0e0
+        }
+        .title h4 {
+            font-size: 3rem;
+            color: #949494;
+            margin: 3rem 0rem 1rem;
+            background-color: #e0e0e0;
+            width: auto;
+            display: inline-block;
+            padding: 1rem 3rem;
+            box-shadow: 0 0 14px 0 #949494;
+            border-radius: 11px;
+            font-weight: 200;
+        }
+
+        #form_inputs {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 3rem;
+        }
+        .panel {
+            padding: 1rem;
+        }
+        .panel h4 {
+            text-align: center;
+            box-shadow: 0 4px 2px -2px gray;
+            padding: 1rem 0 .5rem;
+        }
+        .colors {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        #lista_de_carros {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+        }
+        .carro {
+            padding: 1rem;
+            color: black;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .carro_number {
+
+        }
+        .carro_marca {
+
+        }
+        .carro_year {
+
+        }
+        .carro_color {
+
+        }
+        #btnCrear {
+            background-color: darkblue;
+            color: white;
+            cursor: pointer;
+            padding: 1rem;
+            display: inline-block;
+            margin: 0 auto;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="cochera">
+        <div class="title">
+            <h4>Bienvenido a la MEGA COCHERA de MEDELLIN!</h4>
+            <hr>
+            <h5>Aquí puede construir todos los carros que necesite.</h5>
+        </div>
+        <div id="form_inputs">
+            <div class="panel numero">
+                <h4>Parcero, ¿Cuántos carros necesita?</h4>
+                <label for="numero_carros">Recuerde que el mínimo son 30...</label> <br>    
+                <input type="number" name="numero_de_carros" id="numero_de_carros" min="30" value="30"> 
+            </div>            
+            <div class="panel fecha">
+                <h4>¿De qué año sería al carro más antigüo de su colección?</h4>
+                <input type="month" name="fecha_de_inicio" id="fecha_de_inicio">
+            </div>
+            <div class="panel marcas">
+                <h4>¿Con cuales marcas deseas empezar?</h4>
+                <fieldset>
+                    
+                    <legend>Puedes seleccionar varias</legend>
+                    <div>
+                        <input type="checkbox" id="ferrari" name="ferrari" value="ferrari" class="marca">
+                        <label for="ferrari">Ferrari</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="lamborghini" name="lamborghini" value="lamborghini" class="marca">
+                        <label for="music">Lamborghini</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="ford" name="ford" value="ford" class="marca">
+                        <label for="music">Ford</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="renault" name="renault" value="renault" class="marca">
+                        <label for="music">Renault</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="toyota" name="toyota" value="toyota" class="marca">
+                        <label for="music">Toyota</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="tesla" name="tesla" value="tesla" class="marca">
+                        <label for="music">Tesla</label>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="panel colores">
+                <h4>¿De qué colores le gustan sus carros?</h4>
+                <div class="colors">
+                    <div class="color-1">
+                        <h5>color 1</h5>
+                        <input type="color" name="color_1" id="color_1">
+                    </div>
+                    <div class="color-2">
+                        <h5>color 2</h5>
+                        <input type="color" name="color_2" id="color_2">
+                    </div>
+                    <div class="color-3">
+                        <h5>color 3</h5>
+                        <input type="color" name="color_3" id="color_3">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <hr>
+        <div class="crear">
+            <div onclick="getInput()" id="btnCrear">Crear Carros</div>
+        </div>
+
+        <div  id="lista_de_carros"></div>
+
+
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
